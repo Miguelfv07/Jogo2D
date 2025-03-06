@@ -50,10 +50,23 @@ public class PlayerMov : MonoBehaviour
     void Jump()
 
     {
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.Space))
         {
+            animator.SetBool("Pulando", true);
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         }
+        else 
+        {
+            animator.SetBool("Pulando", false);
+        }
    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("obj"))
+        {
+            Destroy(collision.gameObject);
+        }
+    }
 }
 
