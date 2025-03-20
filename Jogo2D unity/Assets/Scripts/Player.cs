@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMov : MonoBehaviour
+public class Player : MonoBehaviour
 
 {
+    public AudioClip outroAudio;
     public float speed = 5;
     public int jumpForce = 10;
     private Rigidbody2D rb;
@@ -65,7 +66,8 @@ public class PlayerMov : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("obj"))
         {
-            Destroy(collision.gameObject);
+           this.gameObject.GetComponent<AudioSource>().Play();
+           Destroy(collision.gameObject,2f );
         }
     }
 }
