@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 
 {
+    public GameObject particula;
     public AudioClip outroAudio;
     public float speed = 5;
     public int jumpForce = 10;
@@ -67,7 +68,8 @@ public class Player : MonoBehaviour
         if (collision.gameObject.CompareTag("obj"))
         {
            this.gameObject.GetComponent<AudioSource>().Play();
-           Destroy(collision.gameObject,2f );
+           Destroy(collision.gameObject );
+            Instantiate(particula, collision.gameObject.transform.position, Quaternion.identity);
         }
     }
 }

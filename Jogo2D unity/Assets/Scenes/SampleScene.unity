@@ -2014,6 +2014,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 431e5b59c6ea2ed4584b044d31d1c54e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particula: {fileID: 1447693802910573064, guid: e4c3c7fbe2526e148a13cd4712c9fdd7, type: 3}
   outroAudio: {fileID: 0}
   speed: 5
   jumpForce: 10
